@@ -6,7 +6,7 @@ phases:
       - Start-Process -Wait msiexec "/i $env:TEMP\AWSCLIV2.msi /quiet /norestart"
   pre_build:
     commands:
-      - '&"C:\Program Files\Amazon\AWSCLIV2\aws" codeartifact login --tool npm --repository secondbuildcodeartifact --domain codeartifact --domain-owner 264161240947'
+      - '&"C:\Program Files\Amazon\AWSCLIV2\aws" aws codeartifact login --tool npm --repository secondbuildcodeartifact --domain codeartifact --domain-owner 264161240947'
   build:
     commands:
       - npm install
